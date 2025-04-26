@@ -198,6 +198,56 @@ For reference see photo3 in photoProof folder
    Impact:
    Users may be misinformed about the location. Impacts the platform’s reliability and professionalism.
 
+3. Outdated Google+ Link:
+   The “Google Plus” social media icon points to an old Google+ page. 
+Since Google+ was officially shut down, clicking the icon results in a broken link or page error. 
+This needs to be updated or removed to prevent broken navigation.
+
+
+Steps to Reproduce:
+Navigate to website, top right corner of header, locate an icon with g+ sign and click on it.
+
+---
+Positive and Negative Test Cases
+
+•	Positive Test Cases:
+
+Tests that confirm the system behaves as expected when correct inputs are provided.
+Examples:
+
+•	Clicking on each category (Street, Business, Services, Sports, Transport) loads the correct page.
+
+•	Map zoom in/out buttons work as intended.
+
+•	Language switch to English and back to Bosnian updates placeholders properly.
+
+•	Negative Test Cases:
+
+Tests that confirm the system properly handles incorrect or unexpected inputs.
+
+Examples:
+•	Timeout exceptions if elements are not found (e.g., broken links or delayed loading).
+
+•	Checking if layout still holds for very small or large screen sizes.
+
+•	Asserting search placeholders to detect if language switch fails.
+
+---
+
+Smoke Tests
+
+The following tests represent smoke tests (basic functionality checks):
+
+•	Clicking on main categories (Street, Business, Services, Sports, Transport).
+
+•	Switching map zoom in and out.
+
+•	Clicking on social media icons (Facebook, Twitter, Google+).
+
+•	Switching language and verifying it visually.
+
+These tests verify the critical paths of the application are working before deeper testing.
+
 ---
 
 ## 📝 Additional Notes

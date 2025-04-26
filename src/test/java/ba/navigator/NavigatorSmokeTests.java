@@ -34,7 +34,7 @@ public class NavigatorSmokeTests {
     @Test
     public void testHomePageLoads() {
         try {
-            // Wait for a key element on the home page to be visible (for example, the header)
+            // Wait for a key element on the home page to be visible
             WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("header")));
 
             // Assert that the header is displayed, confirming the page loaded
@@ -100,94 +100,94 @@ public class NavigatorSmokeTests {
         assertTrue("The no-results message should match the expected text", actualMessage.contains(expectedMessage));
     }
 
-@Test
+    @Test
     public void clickCategoryFood() {
-        // Čekamo da se link za kategoriju 'Hrana' pojavi i bude klikabilan
+        // Wait for the 'Food' category link to appear and be clickable
         WebElement foodCategory = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//a[@href='#/categories/food']")));
 
-        // Klik na kategoriju 'Hrana'
+        // Click on the 'Food' category
         foodCategory.click();
 
-        // Možeš dodati provjeru da li se stranica za 'Hrana' učitala (npr. URL ili naslov)
+        // Verify that the 'Food' page has loaded
         wait.until(ExpectedConditions.urlContains("/categories/food"));
     }
 
     @Test
     public void clickSarajevskaPozorista() {
-        // Čekamo da se link za Sarajevska Pozorišta pojavi i bude klikabilan
+        // Wait for the 'Sarajevo Theaters' link to appear and be clickable
         WebElement sarajevskaPozorista = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@class='content']//div[text()='SARAJEVSKA POZORIŠTA']")));
 
-        // Klik na Sarajevska Pozorišta
+        // Click on 'Sarajevo Theaters'
         sarajevskaPozorista.click();
 
-        // Možeš dodati provjeru da li se stranica za Sarajevska Pozorišta učitala (npr. URL ili naslov)
+        // Verify that the 'Sarajevo Theaters' page has loaded
         wait.until(ExpectedConditions.urlContains("/list/sarajevska-pozorista"));
     }
 
     @Test
     public void clickNextbike() {
-        // Čekamo da se link za Nextbike pojavi i bude klikabilan
+        // Wait for the 'Nextbike' link to appear and be clickable
         WebElement nextbike = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@class='content']//div[text()='NEXTBIKE']")));
 
-        // Klik na Nextbike
+        // Click on 'Nextbike'
         nextbike.click();
 
-        // Možeš dodati provjeru da li se stranica za Nextbike učitala (npr. URL ili naslov)
+        // Verify that the 'Nextbike' page has loaded
         wait.until(ExpectedConditions.urlContains("/list/nextbike"));
     }
 
     @Test
     public void clickSmokeFreePublicPlaces() {
-        // Čekamo da se link za Smoke-Free Public Places pojavi i bude klikabilan
+        // Wait for the 'Smoke-Free Public Places' link to appear and be clickable
         WebElement smokeFreePublicPlaces = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@class='content']//div[text()='SMOKE-FREE PUBLIC PLACES']")));
 
-        // Klik na Smoke-Free Public Places
+        // Click on 'Smoke-Free Public Places'
         smokeFreePublicPlaces.click();
 
-        // Možeš dodati provjeru da li se stranica za Smoke-Free Public Places učitala (npr. URL ili naslov)
+        // Verify that the 'Smoke-Free Public Places' page has loaded
         wait.until(ExpectedConditions.urlContains("/list/smoke-free-public-places"));
     }
 
     @Test
     public void clickAccommodation() {
-        // Čekamo da se link za Smještaj pojavi i bude klikabilan
+        // Wait for the 'Accommodation' category link to appear and be clickable
         WebElement accommodationCategory = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//a[@href='#/categories/accommodation']")));
 
-        // Klik na kategoriju 'Smještaj'
+        // Click on the 'Accommodation' category
         accommodationCategory.click();
 
-        // Možeš dodati provjeru da li se stranica za 'Smještaj' učitala (npr. URL ili naslov)
+        // Verify that the 'Accommodation' page has loaded
         wait.until(ExpectedConditions.urlContains("/categories/accommodation"));
     }
 
     @Test
     public void clickCoffee() {
-        // Čekamo da se link za Kafu pojavi i bude klikabilan
+        // Wait for the 'Coffee' category link to appear and be clickable
         WebElement coffeeCategory = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//a[@href='#/categories/coffee']")));
 
-        // Klik na kategoriju 'Kafa'
+        // Click on the 'Coffee' category
         coffeeCategory.click();
 
-        // Možeš dodati provjeru da li se stranica za 'Kafu' učitala (npr. URL ili naslov)
+        // Verify that the 'Coffee' page has loaded
         wait.until(ExpectedConditions.urlContains("/categories/coffee"));
     }
 
     @Test
     public void clickNightlife() {
-        // Čekamo da se link za Noćni život pojavi i bude klikabilan
+        // Wait for the 'Nightlife' category link to appear and be clickable
         WebElement nightlifeCategory = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//a[@href='#/categories/nightlife']")));
 
-        // Klik na kategoriju 'Noćni život'
+        // Click on the 'Nightlife' category
         nightlifeCategory.click();
 
-        // Možeš dodati provjeru da li se stranica za 'Noćni život' učitala (npr. URL ili naslov)
+        // Verify that the 'Nightlife' page has loaded
         wait.until(ExpectedConditions.urlContains("/categories/nightlife"));
     }
 
@@ -205,20 +205,20 @@ public class NavigatorSmokeTests {
         // Wait for the URL to contain '/categories/shopping'
         wait.until(ExpectedConditions.urlContains("/categories/shopping"));
     }
+
     @Test
     public void clickAttractions() {
-        // Ako ti treba više vremena da se app učita, dodaš malo više ovdje
+        // If it takes more time for the app to load, you can add more wait time here
         try {
             WebElement attractionsLink = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//a[contains(@href, '#/categories/attractions')]")
             ));
             attractionsLink.click();
-            System.out.println("✅ Kliknuo na Attractions!");
+            System.out.println("✅ Clicked on Attractions!");
         } catch (Exception e) {
-            System.out.println("❌ Nije našao Attractions link: " + e.getMessage());
+            System.out.println("❌ Could not find the Attractions link: " + e.getMessage());
         }
     }
-
 
     @Test
     public void clickArtCategory() {
@@ -243,8 +243,6 @@ public class NavigatorSmokeTests {
     }
     @Test
     public void clickStreet() {
-
-        // Increase timeout to 30 seconds
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         try {
@@ -257,15 +255,12 @@ public class NavigatorSmokeTests {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", streetElement);
 
-            // Optionally, log success
             System.out.println("Clicked on street element successfully!");
 
         } catch (TimeoutException e) {
-            // Handle timeout exception if the element was not found
             System.out.println("Timeout while waiting for element to be visible.");
             e.printStackTrace();
         } catch (WebDriverException e) {
-            // Handle any other WebDriver exceptions (like issues with the browser or driver)
             System.out.println("WebDriver exception occurred.");
             e.printStackTrace();
         }
@@ -274,17 +269,17 @@ public class NavigatorSmokeTests {
     @Test
     public void clickBusiness() {
         try {
-            // Čekamo da se link za 'Business' pojavi i bude vidljiv
+            // Wait for the 'Business' link to appear and be visible
             WebElement businessCategory = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//a[@href='#/categories/business']")));
 
-            // Ako je element vidljiv, kliknemo na njega putem JavaScript-a ako nije direktno klikabilan
+            // If the element is visible, click on it using JavaScript if it's not directly clickable
             if (businessCategory.isDisplayed()) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", businessCategory);
                 System.out.println("Clicked on 'Business' category successfully!");
             }
 
-            // Provjera da li je stranica za 'Business' učitana (npr. URL)
+            // Check if the 'Business' page has loaded
             wait.until(ExpectedConditions.urlContains("/categories/business"));
             System.out.println("Business page loaded successfully!");
 
@@ -300,17 +295,17 @@ public class NavigatorSmokeTests {
     @Test
     public void clickServices() {
         try {
-            // Čekamo da se link za 'Services' pojavi i bude vidljiv
+            // Wait for the 'Services' link to appear and be visible
             WebElement servicesCategory = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//a[@href='#/categories/services']")));
 
-            // Ako je element vidljiv, kliknemo na njega putem JavaScript-a ako nije direktno klikabilan
+            // If the element is visible, click on it using JavaScript if it's not directly clickable
             if (servicesCategory.isDisplayed()) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", servicesCategory);
                 System.out.println("Clicked on 'Services' category successfully!");
             }
 
-            // Provjera da li je stranica za 'Services' učitana (npr. URL)
+            // Check if the 'Services' page has loaded
             wait.until(ExpectedConditions.urlContains("/categories/services"));
             System.out.println("Services page loaded successfully!");
 
@@ -322,20 +317,21 @@ public class NavigatorSmokeTests {
             e.printStackTrace();
         }
     }
+
     @Test
     public void clickSports() {
         try {
-            // Čekamo da se link za 'Sports' pojavi i bude vidljiv
+            // Wait for the 'Sports' link to appear and be visible
             WebElement sportsCategory = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//a[@href='#/categories/sports']")));
 
-            // Ako je element vidljiv, kliknemo na njega putem JavaScript-a ako nije direktno klikabilan
+            // If the element is visible, click on it using JavaScript if it's not directly clickable
             if (sportsCategory.isDisplayed()) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", sportsCategory);
                 System.out.println("Clicked on 'Sports' category successfully!");
             }
 
-            // Provjera da li je stranica za 'Sports' učitana (npr. URL)
+            // Check if the 'Sports' page has loaded
             wait.until(ExpectedConditions.urlContains("/categories/sports"));
             System.out.println("Sports page loaded successfully!");
 
@@ -351,17 +347,17 @@ public class NavigatorSmokeTests {
     @Test
     public void clickTransport() {
         try {
-            // Čekamo da se link za 'Transport' pojavi i bude vidljiv
+            // Wait for the 'Transport' link to appear and be visible
             WebElement transportCategory = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//a[@href='#/categories/transport']")));
 
-            // Ako je element vidljiv, kliknemo na njega putem JavaScript-a ako nije direktno klikabilan
+            // If the element is visible, click on it using JavaScript if it's not directly clickable
             if (transportCategory.isDisplayed()) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", transportCategory);
                 System.out.println("Clicked on 'Transport' category successfully!");
             }
 
-            // Provjera da li je stranica za 'Transport' učitana (npr. URL)
+            // Check if the 'Transport' page has loaded
             wait.until(ExpectedConditions.urlContains("/categories/transport"));
             System.out.println("Transport page loaded successfully!");
 
@@ -417,6 +413,7 @@ public class NavigatorSmokeTests {
         Actions actions = new Actions(driver);
         actions.contextClick(mapCanvas).perform();
     }
+
     @Test
     public void testLanguageSwitchToEnglishAndBack() throws InterruptedException {
         // Wait for language menu
@@ -429,7 +426,7 @@ public class NavigatorSmokeTests {
         // Optional small sleep if needed
         Thread.sleep(1000);
 
-        // Wait for English search field by placeholder (if it's an input)
+        // Wait for English search field by placeholder
         WebElement searchInEnglish = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("input[placeholder='Search street or place']")));
         assertTrue("Page should display English search input after switching language", searchInEnglish.isDisplayed());
@@ -445,6 +442,7 @@ public class NavigatorSmokeTests {
                 By.cssSelector("input[placeholder='Traži ulicu ili objekat']")));
         assertTrue("Page should display Bosnian search input after switching back", searchInBosnian.isDisplayed());
     }
+
     @Test
     public void testResponsiveLayout() {
         // Define screen sizes (mobile, tablet, desktop)
@@ -471,7 +469,6 @@ public class NavigatorSmokeTests {
                 assertTrue("Navigation menu items not found!", menuItems.size() > 0);
 
                 // Optionally, you can assert that the layout doesn't break
-                // (e.g., no horizontal scroll bars appearing unexpectedly)
                 assertTrue("Layout is not responsive for this size", !isHorizontalScrollbarVisible());
 
                 System.out.println("Layout is correct for size: " + size.getWidth() + "x" + size.getHeight());
@@ -552,6 +549,7 @@ public class NavigatorSmokeTests {
         // Optionally, switch back to the original window
         driver.switchTo().window(originalWindow);
     }
+
     @Test
     public void testGooglePlusIconClick() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -572,7 +570,7 @@ public class NavigatorSmokeTests {
         }
 
         // Wait for the new page to load
-        wait.until(ExpectedConditions.urlContains("plus.google.com"));  // Adjust URL based on what you're expecting
+        wait.until(ExpectedConditions.urlContains("plus.google.com"));
 
         // Assert that the URL contains the correct link
         String currentUrl = driver.getCurrentUrl();
@@ -599,6 +597,7 @@ public class NavigatorSmokeTests {
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue("The URL is not correct, expected /create-place", currentUrl.contains("/create-place"));
     }
+
     @Test
     public void testSuggestIdeaButtonClick() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -616,8 +615,6 @@ public class NavigatorSmokeTests {
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue("The URL is not correct, expected /feedback", currentUrl.contains("/feedback"));
     }
-
-
     @After
     public void tearDown() {
         if (driver != null) {
