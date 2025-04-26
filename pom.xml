@@ -10,17 +10,32 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- Repositories section -->
+    <repositories>
+        <!-- Maven Central Repository -->
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <!-- Optional: Selenium Repository -->
+        <repository>
+            <id>selenium-repo</id>
+            <url>https://maven.seleniumhq.org</url>
+        </repository>
+    </repositories>
+
+    <!-- Dependencies section -->
     <dependencies>
-        <!-- Selenium -->
+        <!-- Selenium Java (covers Selenium DevTools and other tools) -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.18.1</version>
+            <version>4.19.1</version>
         </dependency>
 
         <!-- JUnit 5 -->
@@ -30,8 +45,27 @@
             <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.18.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.7</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
+    <!-- Build section -->
     <build>
         <plugins>
             <!-- Run JUnit 5 tests -->
@@ -42,4 +76,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
